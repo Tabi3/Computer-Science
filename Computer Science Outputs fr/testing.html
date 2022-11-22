@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<style>
+			/* Set the variables */
+			:root {
+				/* from tailwindcss */
+				--box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+					0 2px 4px -2px rgb(0 0 0 / 0.1);
+			}
+
+			/* Fix some bugs and style it real quick */
+			* {
+				font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+				box-sizing: border-box;
+				font-weight: 600;
+				padding: 0;
+				margin: 0;
+			}
+
+			/* Body Styling */
+			body {
+				justify-content: center;
+				flex-direction: column;
+				display: flex;
+				height: 100vh;
+				width: 55vw;
+				box-shadow: var(--box-shadow);
+				margin: auto;
+				gap: 1rem;
+			}
+
+			/* Main Styling */
+			main {
+				box-shadow: var(--box-shadow);
+				border-radius: 0.25rem;
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: repeat(3, min-content);
+				align-content: center;
+				position: relative;
+				padding: 1rem;
+				display: grid;
+				margin: auto;
+				width: 50vw;
+				gap: 1rem;
+			}
+
+			/* Style the buttons */
+			a {
+				box-shadow: var(--box-shadow);
+				background-color: #ef4648;
+				border-radius: 0.25rem;
+				text-decoration: none;
+				padding: 1rem 2rem;
+				color: white;
+				width: 100%;
+			}
+
+			/* Style the divs */
+			div {
+				border: 2px solid black;
+				border-radius: 0.25rem;
+				padding: 1rem;
+			}
+
+			/* Events */
+			#Event-1:target {
+				background-image: linear-gradient(45deg, #5365ff, #9370f6);
+				color: white;
+			}
+			#Event-2:target {
+				background-color: #feca54;
+				color: white;
+				border: 2px dotted #528124;
+			}
+
+			/* Body Pseudos */
+			body::before,
+			body::after {
+				content: "Filler";
+				background-color: #fbfbfb;
+				height: 100%;
+				align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+				display: flex;
+			}
+			body::before {
+                content: "This is a ::before pseudo-element";
+			}
+            body::after {
+                content: "This is an ::after pseudo-element";
+            }
+		</style>
+	</head>
+	<body>
+		<main>
+			<a href="#Event-1">First Link</a>
+			<!-- <br /> (No need for this because grid :D) -->
+			<a href="#Event-2">Second Link</a>
+			<div id="Event-1">Div 1 here</div>
+			<div id="Event-2">Div 2 here</div>
+            <a href="#" style="grid-column: 2 span;">Reset Link</a>
+		</main>
+	</body>
+</html>
